@@ -1,6 +1,8 @@
 version: 2
-docker:
-- image: circleci/openjdk:8-jdk-stretch
-steps:
-- checkout
-- run: mvn clean compile
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+    steps:
+      - checkout
+      - run: mvn clean compile
